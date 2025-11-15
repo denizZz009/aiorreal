@@ -335,11 +335,6 @@ MIT License - see [LICENSE](LICENSE) file for details.
 - Diffusion artifact detection (CVPR 2023)
 - GAN fingerprinting research (ACM CCS 2020)
 
-## 📞 Contact & Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/ai-detection/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/ai-detection/discussions)
-- **Email**: your.email@example.com
 
 ## ⚠️ Disclaimer
 
@@ -352,3 +347,4 @@ This tool is provided for research and educational purposes. Detection accuracy 
   <br>
   <sub>No ML models • CPU-only • Explainable results</sub>
 </div>
+
