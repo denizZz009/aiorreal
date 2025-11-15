@@ -1,0 +1,1 @@
+"""Karar motoru modülü"""

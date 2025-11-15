@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Generation Detection System</title>
+    <meta name="description" content="Model-free AI detection system - Detect whether image and video files are AI-generated or real">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 AI Generation Detection System</h1>
+            <p class="subtitle">Detect whether images and videos are AI-generated or real</p>
+        </header>
+
+        <main>
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <h3>Upload File</h3>
+                    <p>Drag and drop an image or video file</p>
+                    <p class="file-types">JPG, PNG, WEBP, MP4, MOV, AVI</p>
+                    <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.webp,.mp4,.mov,.avi" multiple>
+                    <button class="btn-primary" onclick="document.getElementById('fileInput').click()">
+                        Select File
+                    </button>
+                </div>
+
+                <div class="options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="fastMode">
+                        <span>Fast Mode</span>
+                    </label>
+                </div>
+
+                <button class="btn-analyze" id="analyzeBtn" disabled>
+                    <span class="btn-text">Analyze</span>
+                    <span class="btn-loader" style="display: none;">⏳ Analyzing...</span>
+                </button>
+            </section>
+
+            <!-- Selected Files -->
+            <section class="selected-files" id="selectedFiles" style="display: none;">
+                <h3>Selected Files</h3>
+                <div id="fileList"></div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Analysis Results</h2>
+                <div id="resultsContainer"></div>
+            </section>
+
+            <!-- System Info -->
+            <section class="info-section">
+                <div class="info-card">
+                    <h3>🎯 How It Works</h3>
+                    <ul>
+                        <li><strong>Watermark Detection:</strong> Detects visible and invisible watermarks</li>
+                        <li><strong>Metadata Analysis:</strong> Checks EXIF, C2PA, and file metadata</li>
+                        <li><strong>Frequency Analysis:</strong> Detects diffusion artifacts using DCT/FFT</li>
+                        <li><strong>Noise Analysis:</strong> Examines sensor noise patterns</li>
+                        <li><strong>Video Analysis:</strong> Checks temporal flicker and motion consistency</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>📊 Decision Levels</h3>
+                    <div class="verdict-levels">
+                        <div class="level high">AI-generated (HIGH) - Score ≥ 100</div>
+                        <div class="level medium">AI-generated (MEDIUM) - Score ≥ 60</div>
+                        <div class="level suspicious">SUSPICIOUS - Score ≥ 30</div>
+                        <div class="level real">Likely REAL - Score < 30</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Model-Free Detection System | CPU-Only | No ML Models</p>
+            <p class="api-status">API Status: <span id="apiStatus">Checking...</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
